@@ -21,7 +21,9 @@ function ToastProvider({ children }) {
     [toasts]
   );
 
-  useEscapeKey(() => {setToasts([])})
+  useEscapeKey(() => {
+    setToasts([]);
+  });
 
   const value = React.useMemo(() => {
     return { toasts, addToast, deleteToast };

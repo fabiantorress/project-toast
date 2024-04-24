@@ -9,8 +9,7 @@ import { ToastContext } from "../ToastProvider";
 const VARIANT_OPTIONS = ["notice", "warning", "success", "error"];
 
 function ToastPlayground() {
-  const { toasts, addToast, deleteToast } =
-    React.useContext(ToastContext);
+  const { addToast } = React.useContext(ToastContext);
   const [message, setMessage] = React.useState("");
   const [variant, setVariant] = React.useState("notice");
 
@@ -28,9 +27,7 @@ function ToastPlayground() {
         <h1>Toast Playground</h1>
       </header>
 
-      {toasts.length > 0 && (
-        <ToastShelf toasts={toasts} handleDismiss={deleteToast} />
-      )}
+      <ToastShelf />
 
       <form className={styles.controlsWrapper} onSubmit={handleSubmit}>
         <div className={styles.row}>
